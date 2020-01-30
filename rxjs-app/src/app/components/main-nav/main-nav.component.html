@@ -32,6 +32,12 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Ethereum App</span>
+      <span class="spacer"></span>
+      <div class="navbar" *ngIf="!(isHandset$ | async)">
+        <button mat-button (click)="onClick" [routerLinkActive]="['active']" routerLink="/">Home</button>
+        <button mat-button (click)="onClick" [routerLinkActive]="['active']" routerLink="/profile">Profile</button>
+        <button mat-button (click)="onClick" [routerLinkActive]="['active']" routerLink="/account">Account</button>
+      </div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>
